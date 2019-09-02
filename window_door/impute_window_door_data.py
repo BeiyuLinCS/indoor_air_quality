@@ -6,18 +6,11 @@ import sys
 import time
 import string
 import calendar
-from decimal import *
-import csv
-import pylab
-import pytz
 import re
 import os 
-import glob
 import errno
-from dateutil import tz
 import numpy as np
 import datetime
-from pytz import timezone
 from datetime import datetime, timedelta
 import extract_window_door_data as wd
 
