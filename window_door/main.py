@@ -14,7 +14,6 @@ if __name__ == '__main__':
 	flag_impute_by_median = True
 	d, all_window_door = extract_door_window_data_func(finpath)
 	d_mean_duration, d_median_duration, d_missing_data = find_mean_median_duration_func(d)
-	print("**********d_missing_data**********", d_missing_data)
 	d = impute_by_median_mean_func(d, all_window_door, d_missing_data, d_median_duration, d_mean_duration, flag_impute_by_median)
 	write_data_to_file_func(d, foutpath, house_id)
 
