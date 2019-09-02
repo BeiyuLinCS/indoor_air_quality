@@ -13,8 +13,6 @@ def write_data_to_file_func(d, foutpath, house_id):
 		except:
 		    os.makedirs(fout_new_directory)
 		fout = open(fout_new_directory + "/" + k + ".txt", 'wb')
-		# fout.write("\n".join(d[k]))
-
 		for i in range(0, len(d[k])):
 			fout.write(d[k][i][0] + "\t")
 			fout.write(d[k][i][1] + "\t")

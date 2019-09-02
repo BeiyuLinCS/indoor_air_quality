@@ -1,3 +1,9 @@
+############################################################
+################## Indoor Air Quality Project ##############
+############ Beiyu Lin @ Washing State University ##########
+#################### beiyu.lin@wsu.edu #####################
+############################################################
+
 #!/usr/bin/python
 from extract_window_door_data import extract_door_window_data_func
 from impute_window_door_data import find_mean_median_duration_func, impute_by_median_mean_func

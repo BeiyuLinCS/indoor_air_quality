@@ -40,12 +40,10 @@ def find_mean_median_duration_func(d):
 		## ['local_time, sensor_id, motion_status',....]
 		## ['2015-06-10 17:30:09.153132,OfficeAWindowBA,OPEN',...]
 		for i in range(0, len(d[k])-1):
-			split_curr_str = d[k][i]
-			split_next_str = d[k][i+1]
-			curr_datetime = convert_string_to_datetime(split_curr_str[0]) 
-			next_datetime = convert_string_to_datetime(split_next_str[0])
-			curr_status = split_curr_str[2]
-			next_status = split_next_str[2]
+			curr_datetime = convert_string_to_datetime(d[k][i][0]) 
+			next_datetime = convert_string_to_datetime(d[k][i+1][0])
+			curr_status = d[k][i][2]
+			next_status = d[k][i+1][2]
 			duration = (next_datetime - curr_datetime).total_seconds()
 			if curr_status == next_status:
 				curr_date_missing_data = d[k][i]
@@ -70,10 +68,7 @@ def look_for_next_event_time(all_window_door, curr_event):
 		if str(all_window_door[i][0]) == str(event_split[0]):
 			res =  all_window_door[i+1][0]
 			break			
-	print("all_window_door[i]", all_window_door[i])
-	print("all_window_door[i+1]", all_window_door[i+1])
 	return res
-
 
 def impute_by_median_mean_func(d, all_window_door, d_missing_data, d_median_duration, d_mean_duration, flag_impute_by_median): 
 	if flag_impute_by_median:
@@ -85,10 +80,8 @@ def impute_by_median_mean_func(d, all_window_door, d_missing_data, d_median_dura
 		i = 0 
 		l = [0,0, 0]
 		for i in range(0, len(v)):
-			curr_string_split = d[k][v[i][0]]
-			next_string_split = d[k][v[i][1]]
-			curr_local_time = convert_string_to_datetime(curr_string_split[0])
-			next_local_time = convert_string_to_datetime(next_string_split[0])
+			curr_local_time = convert_string_to_datetime(cd[k][v[i][0]])
+			next_local_time = convert_string_to_datetime(d[k][v[i][1]])
 			temp_list = d[k][v[i][0]]
 			print("temp_list", temp_list, temp_list[2])
 			if temp_list[2] == "OPEN":
