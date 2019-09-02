@@ -36,9 +36,6 @@ def find_mean_median_duration_func(d):
 	d_median_duration = {}
 	for k in d.keys():
 		print("Start imputing the data with sensor id %s" %k)
-		## d[k] is a list of string as below
-		## ['local_time, sensor_id, motion_status',....]
-		## ['2015-06-10 17:30:09.153132,OfficeAWindowBA,OPEN',...]
 		for i in range(0, len(d[k])-1):
 			curr_datetime = convert_string_to_datetime(d[k][i][0]) 
 			next_datetime = convert_string_to_datetime(d[k][i+1][0])
