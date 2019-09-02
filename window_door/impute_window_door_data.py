@@ -83,28 +83,22 @@ def impute_by_median_mean_func(d, all_window_door, d_missing_data, d_median_dura
 			curr_local_time = convert_string_to_datetime(cd[k][v[i][0]])
 			next_local_time = convert_string_to_datetime(d[k][v[i][1]])
 			temp_list = d[k][v[i][0]]
-			print("temp_list", temp_list, temp_list[2])
 			if temp_list[2] == "OPEN":
 				new_motion_status = "CLOSE"
 				if float(v[i][2]) >= impute_duration[k][0]:
 					new_local_time = str(curr_local_time + timedelta(seconds=impute_duration[k][0]))
 				else: 
 					new_local_time = look_for_next_event_time(all_window_door, d[k][v[i][0]])
-
 			elif temp_list[2] == "CLOSE":
 				new_motion_status = "OPEN" 
 				if float(v[i][2]) >= impute_duration[k][1]:
 					new_local_time = str(curr_local_time + timedelta(seconds=impute_duration[k][1]))
 				else: 
 					new_local_time = look_for_next_event_time(all_window_door, d[k][v[i][0]])
-
 			insert_new_data = [str(new_local_time), k, new_motion_status]
 			d[k].append(insert_new_data)
-
 	for k, v in d.items():
-		#[str(new_local_time), k, new_motion_status]
 		d[k] = sorted(d[k], key = lambda x: x[0])
-
 	print("Finish imputing data")
 	return d
 

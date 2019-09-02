@@ -34,6 +34,5 @@ def extract_door_window_data_func(finpath):
 				d[sensor_id] += [temp]
 			else: 
 				d[sensor_id] = [temp]
-
 	print("Finish extracting window and door sensor data for this house.")
 	return d, all_window_door
