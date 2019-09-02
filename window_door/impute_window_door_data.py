@@ -73,8 +73,6 @@ def impute_by_median_mean_func(d, all_window_door, d_missing_data, d_median_dura
 	else: 
 		impute_duration = d_mean_duration
 	for k, v in d_missing_data.items():
-		i = 0 
-		l = [0,0, 0]
 		for i in range(0, len(v)):
 			curr_local_time = convert_string_to_datetime(cd[k][v[i][0]])
 			next_local_time = convert_string_to_datetime(d[k][v[i][1]])
