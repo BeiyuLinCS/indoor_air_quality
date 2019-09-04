@@ -28,7 +28,7 @@ def find_mean_median_duration_func(d):
 	d_mean_duration = {}
 	d_median_duration = {}
 	for k in d.keys():
-		print("Start imputing the data with sensor id %s" %k)
+		print("Start imputing data with sensor id %s" %k)
 		for i in range(0, len(d[k])-1):
 			curr_datetime = convert_string_to_datetime(d[k][i][0]) 
 			next_datetime = convert_string_to_datetime(d[k][i+1][0])
@@ -67,8 +67,8 @@ def impute_by_median_mean_func(d, all_window_door, d_missing_data, d_median_dura
 		impute_duration = d_mean_duration
 	for k, v in d_missing_data.items():
 		for i in range(0, len(v)):
-			curr_local_time = convert_string_to_datetime(cd[k][v[i][0]])
-			next_local_time = convert_string_to_datetime(d[k][v[i][1]])
+			curr_local_time = convert_string_to_datetime(d[k][v[i][0]][0])
+			next_local_time = convert_string_to_datetime(d[k][v[i][1]][0])
 			temp_list = d[k][v[i][0]]
 			if temp_list[2] == "OPEN":
 				new_motion_status = "CLOSE"

@@ -4,9 +4,9 @@ import os
 import errno
 import pickle
 
-def write_data_to_file_func(d, foutpath, house_id):
+def write_data_to_file_func(d, foutpath, house_id, data_process):
 	for k in d.keys():
-		fout_new_directory_path = foutpath + house_id +"/"
+		fout_new_directory_path = foutpath + house_id +"/" + data_process +"/"
 		fout_new_directory = os.path.dirname(fout_new_directory_path)
 		try:
 		    os.stat(fout_new_directory)
