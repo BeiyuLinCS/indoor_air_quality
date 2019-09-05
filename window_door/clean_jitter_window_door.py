@@ -47,9 +47,10 @@ def clean_jitter(input_list, start_end_index):
 	return new_list
 
 def clean_jitter_window_door_func(d):
-
+	print("")
+	print("start clean jitter of sensor data")
 	for k, v in d.items():
-		print("start clean jitter of sensor id %s"% k)
+		
 		if v[0][2] in ('CLOSE', 'OFF'):
 			del v[0]
 		else: 

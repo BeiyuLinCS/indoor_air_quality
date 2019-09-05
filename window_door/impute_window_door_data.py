@@ -27,8 +27,9 @@ def find_mean_median_duration_func(d):
 	durations_of_end_start = [] ## off_on or close_open
 	d_mean_duration = {}
 	d_median_duration = {}
+	print("")
+	print("Start imputing data")
 	for k in d.keys():
-		print("Start imputing data with sensor id %s" %k)
 		for i in range(0, len(d[k])-1):
 			curr_datetime = convert_string_to_datetime(d[k][i][0]) 
 			next_datetime = convert_string_to_datetime(d[k][i+1][0])
