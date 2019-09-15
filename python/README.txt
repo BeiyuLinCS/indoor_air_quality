@@ -1,3 +1,5 @@
+This package is used to calculate the 4 features for the Indoor Air Quality Projects. 
+
 1. run "extract_data_from_database.py" to extract raw sensor data from CASAS's database and write under ../data/testbed_name. 
 Change lines 130 through 132 to set up the testbed name, starting and end time of the extracted data.
 
