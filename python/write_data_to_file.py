@@ -14,7 +14,6 @@ def write_data_to_file_func(d, foutpath, house_id, data_process):
 		    os.makedirs(fout_new_directory)
 		fout = open(fout_new_directory + "/" + k + ".txt", 'wb')
 		for i in range(0, len(d[k])):
-			# print("d[k][i]", d[k])
 			# 	print("k,v", k, v)
 			# 	'BedroomBWindow', [['2015-06-19 14:43:00', 0.020105316666666664, 0.015],
 			for j in range(0, len(d[k][i])):

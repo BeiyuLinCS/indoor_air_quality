@@ -62,7 +62,6 @@ def calculate_overall_activity_level(d):
 			i += 1
 	return overall_activity_per_minute
 
-
 def extract_impute_motion_data(fin_root_path, fout_root_path, house_id_list):
 	for house_id in house_id_list:
 		finpath = fin_root_path + house_id + "/" + "raw_no_labelled_data.al"

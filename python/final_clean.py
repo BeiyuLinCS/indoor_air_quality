@@ -11,7 +11,6 @@ from duration_labelled_activity import make_dir
 from insert_each_minute import convert_string_to_date
 
 def convert_string_to_only_date(input_string):
-	# '2015/8/25''%Y/%m/%d'
 	res = datetime.strptime(input_string, "%Y/%m/%d")
 	return res
 
